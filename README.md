@@ -1,60 +1,101 @@
 # Atlas Scholarship Intelligence
 
-**An evidence-first scholarship discovery, extraction, verification, and change-monitoring platform for Indian scholarship programmes.**
+### Evidence-First Scholarship Discovery, Extraction, Verification & Change Intelligence Platform
 
-Developed for the **Edxso AI Engineer Intern – Assignment 2**.
+**Edxso AI Engineer Intern — Assignment 2**
 
-[Watch Project Demo](https://drive.google.com/file/d/1BSRz7ux1nf4qNXMmPbNIIWqYdYEAtx3b/view)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Framework-Streamlit-red?logo=streamlit)](https://streamlit.io/)
+[![Database](https://img.shields.io/badge/Database-SQLite-blue)](https://www.sqlite.org/)
+[![Tests](https://img.shields.io/badge/Tests-31%20Passed-success)](#testing-and-validation)
+[![Status](https://img.shields.io/badge/Project-Completed-success)](#project-overview)
+
+---
+
+## 🎥 Project Demo
+
+**Watch the complete end-to-end application demonstration:**
+
+### [▶ WATCH ATLAS SCHOLARSHIP INTELLIGENCE — PROJECT DEMO](https://drive.google.com/file/d/1BSRz7ux1nf4qNXMmPbNIIWqYdYEAtx3b/view)
+
+The demonstration covers:
+
+- Interactive dashboard and scholarship analytics
+- Scholarship discovery and exploration
+- Evidence-based extraction and verification
+- Confidence scoring and mandatory verification gates
+- Live scholarship crawling
+- Change detection and intelligence
 
 ---
 
 ## 1. Project Overview
 
-Atlas Scholarship Intelligence is a research-oriented intelligence platform designed to make Indian scholarship information easier to discover, evaluate, and monitor.
+Atlas Scholarship Intelligence is an evidence-first scholarship intelligence platform designed to discover, extract, verify, and monitor Indian scholarship programmes.
 
-Scholarship information is distributed across government portals, scheme guidelines, institutional websites, and application directories. Details such as eligibility, financial benefits, deadlines, and application procedures may be incomplete, outdated, or inconsistent across sources.
+Scholarship information is distributed across government portals, scheme guidelines, institutional websites, and application directories. Important details such as eligibility criteria, financial benefits, deadlines, and application procedures can be incomplete, outdated, or inconsistent across sources.
 
-Atlas addresses this challenge through a structured pipeline that combines scholarship discovery, field-level evidence collection, source mapping, confidence scoring, verification gates, and change monitoring.
+Atlas addresses this challenge through a structured pipeline that combines:
 
-The platform prioritizes **traceable evidence over unsupported automation**. A scholarship is not marked verified simply because information has been extracted or a source URL has been found.
+- Scholarship discovery and structured extraction
+- Field-level evidence collection
+- Official-source mapping
+- Confidence scoring and verification gates
+- Historical tracking and change detection
+- Human-review workflows for unresolved records
+
+**Core principle:** Extracted information is not automatically considered verified. Every verification decision must satisfy the platform's evidence and mandatory-gate requirements.
+
+---
 
 ## 2. Key Features
 
-### Scholarship discovery and exploration
+### 2.1 Scholarship Discovery & Exploration
+
 - Structured repository of Indian scholarship programmes.
 - Search and explore scholarship records.
 - Organized eligibility, benefits, deadlines, and application information.
-- Scheme-specific primary-source mapping.
+- Scheme-specific official-source mapping.
+- Separate tracking of current-cycle information and historical guidelines.
 
-### Evidence-based extraction
+### 2.2 Evidence-Based Information Extraction
+
+- Structured extraction of scholarship information.
 - Field-level evidence tracking.
 - Source URL and evidence excerpt association.
-- Structured scholarship data extraction.
-- Separation of scheme guidelines, official scheme pages, and current-cycle sources.
+- Evidence traceability for extracted fields.
+- Separation of official scheme pages, governing guidelines, and current-cycle sources.
 
-### Verification and confidence scoring
-- Confidence scores for scholarship records.
+### 2.3 Confidence Scoring & Verification
+
+- Confidence scoring for scholarship records.
 - Mandatory verification gates.
 - Evidence-backed verification decisions.
-- Human-review queue for records that do not meet all verification requirements.
 - Explicit distinction between `VERIFIED` and `REVIEW_REQUIRED`.
+- Human-review queue for records with insufficient or unresolved evidence.
+- Prevention of automatic verification based only on source mapping or extraction.
 
-### Live scholarship crawler
-- URL discovery and page fetching.
+### 2.4 Live Scholarship Crawler
+
+- URL discovery and accessible-page fetching.
 - Local fixture crawling for repeatable testing.
 - Candidate extraction and review workflow.
 - Crawl-run logging and error reporting.
-- Respect for website access restrictions.
+- Responsible handling of website access restrictions.
 
-### Change intelligence
-- Tracks official scholarship information changes.
-- Maintains change-event records.
-- Supports stale-record monitoring.
-- Helps identify information that may need re-verification.
+### 2.5 Change Intelligence
+
+- Tracking of official scholarship information changes.
+- Historical change-event records.
+- Stale-record monitoring.
+- Identification of information requiring re-verification.
+- Support for monitoring scholarship status and application-cycle information.
+
+---
 
 ## 3. Project Metrics
 
-The packaged research snapshot contains:
+The validated research snapshot contains:
 
 | Metric | Result |
 |---|---:|
@@ -68,149 +109,239 @@ The packaged research snapshot contains:
 | Official change events | 2 |
 | Automated tests passed | 31 |
 
-These are research-snapshot and validation results, not claims of live application availability.
+**Important:** These figures describe the packaged research snapshot. Official-evidence-backed records are not necessarily formally VERIFIED. Verification status depends on the complete evidence and mandatory-gate requirements.
 
-## 4. System Architecture
+---
 
-The application follows a modular pipeline:
+## 4. System Architecture & Workflow
 
-1. **Discovery:** Collect scholarship-related source URLs.
-2. **Fetching:** Retrieve accessible source content.
-3. **Extraction:** Identify scholarship information and candidate fields.
-4. **Evidence mapping:** Associate extracted fields with supporting source evidence.
-5. **Verification:** Evaluate evidence, confidence, and mandatory gates.
-6. **Persistence:** Store scholarship records, evidence, crawl history, and change events.
-7. **Intelligence:** Present records, verification status, and changes through the Streamlit dashboard.
+Atlas follows a modular, evidence-driven processing pipeline.
 
-### Main components
+```text
+          OFFICIAL SCHOLARSHIP SOURCES
+                       |
+                       v
+              SOURCE DISCOVERY
+                       |
+                       v
+                PAGE FETCHING
+                       |
+                       v
+             INFORMATION EXTRACTION
+                       |
+                       v
+              FIELD-LEVEL EVIDENCE
+                       |
+                       v
+             CONFIDENCE EVALUATION
+                       |
+                       v
+             MANDATORY VERIFICATION
+                       |
+              +--------+--------+
+              |                 |
+              v                 v
+           VERIFIED       REVIEW_REQUIRED
+              |                 |
+              +--------+--------+
+                       |
+                       v
+              SQLITE PERSISTENCE
+                       |
+                       v
+             CHANGE INTELLIGENCE
+                       |
+                       v
+             STREAMLIT DASHBOARD
+```
 
-| Component | Responsibility |
+### Processing stages
+
+| Stage | Responsibility |
 |---|---|
-| `app.py` | Streamlit dashboard and application interface |
-| `src/crawler.py` | Crawling, discovery, and import workflows |
-| `src/extractor.py` | Scholarship information extraction |
-| `src/verification.py` | Confidence scoring and verification gates |
-| `src/database.py` | Database operations and persistence |
-| `src/history.py` | Historical records and change intelligence |
-| `schema.sql` | Database schema |
-| `tests/` | Automated pipeline and verification tests |
+| Discovery | Identify scholarship-related source URLs. |
+| Fetching | Retrieve accessible source content. |
+| Extraction | Identify scholarship information and candidate fields. |
+| Evidence mapping | Associate extracted fields with supporting evidence. |
+| Verification | Evaluate confidence and mandatory conditions. |
+| Persistence | Store records, evidence, crawl history, and change events. |
+| Intelligence | Present scholarship information, verification status, and changes. |
+
+---
 
 ## 5. Technology Stack
 
-- **Language:** Python
-- **Application interface:** Streamlit
-- **Data storage:** SQLite
-- **Data processing:** CSV and structured Python workflows
-- **Web extraction:** HTTP-based fetching and HTML parsing
-- **Testing:** pytest
-- **Version control:** Git and GitHub
+| Technology | Purpose |
+|---|---|
+| Python | Core application and processing logic |
+| Streamlit | Interactive web dashboard |
+| SQLite | Structured data persistence |
+| Pandas | Tabular data handling |
+| HTML parsing and HTTP fetching | Web content extraction |
+| CSV | Structured research and evidence datasets |
+| Pytest | Automated testing |
+| Git & GitHub | Version control and project hosting |
 
-The project uses a modular structure to keep crawling, extraction, verification, persistence, and presentation responsibilities separate.
+The application uses a modular architecture to separate crawling, extraction, verification, persistence, historical tracking, and presentation.
+
+---
 
 ## 6. Verification Methodology
 
-Atlas uses evidence-backed verification rather than relying solely on extracted text or source availability.
+Atlas prioritizes traceable evidence over unsupported automation.
 
-Each scholarship record is evaluated using its available supporting evidence and verification requirements.
+Each scholarship record is evaluated using its available supporting evidence and mandatory verification requirements.
 
-The system distinguishes between:
+### Verification statuses
 
-- **VERIFIED:** The record satisfies the required verification conditions.
-- **REVIEW_REQUIRED:** Evidence or one or more mandatory conditions remain insufficient.
+**VERIFIED**
 
-An official source mapping does not automatically promote a scholarship to VERIFIED. Missing application-route evidence, conflicting information, or other unmet requirements can keep a record in the human-review queue.
+A record is marked `VERIFIED` only when the required verification conditions are satisfied.
 
-## 7. Data and Source Strategy
+**REVIEW_REQUIRED**
 
-The project maintains separate source roles:
+A record remains in the human-review queue when evidence is incomplete, conflicting, or insufficient to satisfy mandatory requirements.
 
-- `official_source_url`: Scheme-specific official source.
-- `scheme_guideline_url`: Governing scheme guideline or specification.
-- `current_cycle_source_url`: Official current-cycle listing used for monitoring application status and deadlines.
+### Evidence and source strategy
+
+The platform maintains distinct source roles:
+
+| Field | Description |
+|---|---|
+| `official_source_url` | Scheme-specific official page or document used as the primary source. |
+| `scheme_guideline_url` | Governing scheme guideline or specification. |
+| `current_cycle_source_url` | Official current-cycle listing used for application-status and deadline monitoring. |
 
 Historical documents and FAQs are labelled accordingly. Generic directory listings are not treated as scheme-specific guidelines.
 
-The repository includes structured source registers, field evidence, scholarship seed data, stale-record information, and official change-event records.
+**Verification rule:** Finding an official URL or extracting a field does not independently establish that a scholarship record is verified.
 
-## 8. Installation and Local Setup
+---
+
+## 7. Database & Data Organization
+
+The project maintains structured scholarship information and supporting research datasets.
+
+| File | Purpose |
+|---|---|
+| `data/atlas.db` | SQLite database containing application records and related data. |
+| `data/scholarships_seed.csv` | Curated scholarship seed records. |
+| `data/field_evidence.csv` | Field-level supporting evidence. |
+| `data/official_source_register.csv` | Official source register. |
+| `data/official_change_events.csv` | Recorded official information changes. |
+| `data/official_stale_records.csv` | Stale-record tracking data. |
+
+This separation supports traceability between scholarship records, evidence, official sources, and historical changes.
+
+---
+
+## 8. Installation & Local Setup
 
 ### Prerequisites
 
-- Python installed
-- Git installed
-- PowerShell or another terminal
+- Python 3.10 or later
+- Git
+- PowerShell, Command Prompt, or another terminal
 
-### Clone the repository
+### Step 1: Clone the repository
 
 ```bash
 git clone https://github.com/aman07052005/Atlas-Scholarship-Intelligence.git
 cd Atlas-Scholarship-Intelligence
 ```
 
-### Create a virtual environment
+### Step 2: Create a virtual environment
 
-Windows PowerShell:
+**Windows PowerShell:**
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-### Install dependencies
+### Step 3: Install dependencies
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-### Launch the application
+### Step 4: Run the application
 
 ```powershell
 streamlit run app.py --server.port 8503
 ```
 
-Open:
+### Step 5: Open the dashboard
 
-`http://localhost:8503`
+Visit:
 
-## 9. Testing and Validation
+```text
+http://localhost:8503
+```
 
-Run the automated test suite:
+---
+
+## 9. Testing & Package Validation
+
+The project includes automated tests for pipeline behaviour and verification logic.
+
+### Run the test suite
 
 ```powershell
 python -m pytest -q
 ```
 
-Run package validation:
+**Validated result:** 31 tests passed.
+
+### Run package validation
 
 ```powershell
 python scripts/validate_package.py
 ```
 
-Run the local crawler fixture:
+The package validator checks:
+
+- Scholarship record integrity and uniqueness.
+- Verification counts and confidence requirements.
+- Official-evidence coverage.
+- Scheme-specific primary-source mapping.
+- Field-level evidence data.
+- Official change-event data.
+- Supported source types.
+- Python syntax validity.
+
+### Run the local crawler fixture
 
 ```powershell
 python scripts/run_local_fixture.py
 ```
 
-The package validation checks the scholarship repository, evidence data, source mapping, official change records, and Python syntax.
+This supports repeatable local crawler testing without depending entirely on external websites.
 
-## 10. Responsible Crawling and Limitations
+---
 
-Atlas is designed with responsible source access in mind.
+## 10. Responsible Crawling & Limitations
 
-- It does not bypass robots.txt or access restrictions.
+Atlas is designed to handle source access responsibly.
+
+- It does not bypass `robots.txt` or website access restrictions.
 - Inaccessible pages are recorded as crawl errors.
-- Extraction candidates are not automatically treated as verified scholarship records.
+- Extraction candidates are not automatically treated as verified records.
 - Evidence gaps are retained for human review.
-- External website availability and content can change.
-- Current application eligibility and deadlines should always be checked against the relevant official source.
+- External website availability and content may change.
+- Current eligibility and application deadlines should always be checked against the relevant official source.
 
-A successful crawl is not equivalent to successful verification.
+A successful crawl does not automatically imply successful extraction or verification.
+
+---
 
 ## 11. Repository Structure
 
 ```text
 Atlas-Scholarship-Intelligence/
+│
+├── .streamlit/
+│   └── config.toml
 │
 ├── app.py
 ├── schema.sql
@@ -224,58 +355,89 @@ Atlas-Scholarship-Intelligence/
 │   ├── field_evidence.csv
 │   ├── official_source_register.csv
 │   ├── official_change_events.csv
-│   └── official_stale_records.csv
+│   ├── official_stale_records.csv
+│   └── README.txt
 │
 ├── docs/
 │   ├── DEMO_WALKTHROUGH.md
-│   ├── TECHNICAL_NOTE.md
+│   ├── EXTRACTION_REPAIR.md
+│   ├── SCHEME_VERIFICATION_MATRIX.md
 │   ├── SOURCE_EVIDENCE.md
 │   ├── SOURCE_REGISTER.md
-│   └── SCHEME_VERIFICATION_MATRIX.md
+│   └── TECHNICAL_NOTE.md
 │
 ├── logs/
+│   ├── live_crawl_latest.json
+│   ├── local_fixture_crawl.json
+│   └── official_web_research_capture.json
 │
 ├── scripts/
+│   ├── prepare_demo.py
+│   ├── run_live_crawl.py
+│   ├── run_local_fixture.py
+│   ├── validate_package.py
+│   └── verify_release.ps1
 │
 ├── src/
 │   ├── crawler.py
-│   ├── extractor.py
-│   ├── verification.py
 │   ├── database.py
+│   ├── demo.py
+│   ├── extractor.py
 │   ├── history.py
-│   └── demo.py
+│   └── verification.py
 │
 └── tests/
     ├── test_pipeline.py
     └── test_verification.py
 ```
 
-## 12. Project Demo
+---
 
-Watch the complete application walkthrough:
+## 12. Documentation
 
-[Atlas Scholarship Intelligence – Demo Video](https://drive.google.com/file/d/1BSRz7ux1nf4qNXMmPbNIIWqYdYEAtx3b/view)
+Additional project documentation is available in the `docs/` directory.
 
-The demonstration covers:
-- Dashboard overview
-- Scholarship discovery and exploration
-- Evidence-based verification and confidence scoring
-- Live scholarship crawling
-- Change detection and intelligence
-
-## 13. Future Improvements
-
-- Expand scholarship coverage across additional states and institutions.
-- Improve extraction quality for complex PDF guidelines.
-- Add more robust historical comparison and change classification.
-- Expand automated source freshness monitoring.
-- Improve reviewer workflows for unresolved evidence gaps.
-- Add broader multilingual scholarship discovery.
+- **Technical Note:** Architecture, design decisions, pipeline, and implementation details.
+- **Source Evidence:** Supporting evidence and source mapping.
+- **Source Register:** Official scholarship source references.
+- **Scheme Verification Matrix:** Scheme-level verification details.
+- **Demo Walkthrough:** Application demonstration workflow.
+- **Extraction Repair:** Extraction quality and repair documentation.
 
 ---
 
-**Author:** Aman Yadav  
-**GitHub:** [aman07052005](https://github.com/aman07052005)
+## 13. Future Improvements
+
+Potential extensions include:
+
+- Expanding scholarship coverage across additional states and institutions.
+- Improving extraction quality for complex PDF guidelines.
+- Enhancing historical comparison and change classification.
+- Expanding automated source-freshness monitoring.
+- Improving human-review workflows for unresolved evidence gaps.
+- Supporting broader multilingual scholarship discovery.
+- Adding more detailed reviewer analytics and reporting.
+
+---
+
+## 14. Project Links
+
+| Resource | Link |
+|---|---|
+| GitHub Repository | [Atlas Scholarship Intelligence](https://github.com/aman07052005/Atlas-Scholarship-Intelligence) |
+| Project Demo | [Watch the Demo](https://drive.google.com/file/d/1BSRz7ux1nf4qNXMmPbNIIWqYdYEAtx3b/view) |
+
+---
+
+## Author
+
+**Aman Yadav**
+
+GitHub: [@aman07052005](https://github.com/aman07052005)
 
 **Project:** Atlas Scholarship Intelligence  
-**Assignment:** Edxso AI Engineer Intern – Assignment 2
+**Assignment:** Edxso AI Engineer Intern — Assignment 2
+
+---
+
+*Built with a focus on evidence traceability, responsible data collection, transparent verification, and reliable scholarship intelligence.*

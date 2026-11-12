@@ -1,0 +1,25 @@
+{
+  "started_at": "2026-11-11T12:26:43.561751+00:00",
+  "finished_at": "2026-11-11T12:28:30.845415+00:00",
+  "seed_urls": [
+    "https://scholarships.gov.in/All-Scholarships",
+    "https://www.ugc.gov.in/Home/student_Corner",
+    "https://socialjustice.gov.in/schemes",
+    "https://tribal.nic.in/Scholarship.aspx"
+  ],
+  "discovered": 83,
+  "fetched": 60,
+  "errors": [
+    {
+      "url": "https://socialjustice.gov.in/schemes",
+      "stage": "discover",
+      "error": "RuntimeError: Could not verify robots.txt for https://socialjustice.gov.in; refusing crawl: robots.txt unavailable (HTTP 503); refusing crawl"
+    },
+    {
+      "url": "https://tribal.nic.in/Scholarship.aspx",
+      "stage": "discover",
+      "error": "RuntimeError: Could not verify robots.txt for https://tribal.nic.in; refusing crawl: HTTPSConnectionPool(host='tribal.nic.in', port=443): Max retries exceeded with url: /robots.txt (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1020)')))"
+    }
+  ],
+  "note": "This log is genuine runtime output. A zero-fetch result must be reported as a network/site-access failure, not as a successful crawl."
+}

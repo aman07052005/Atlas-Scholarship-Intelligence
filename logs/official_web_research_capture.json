@@ -1,0 +1,108 @@
+{
+  "capture_date": "2026-11-11",
+  "method": "Official public pages and PDF documents retrieved and inspected through live web research; not the local Requests crawler run.",
+  "sources": [
+    {
+      "name": "NSP AY 2026-27 listing",
+      "url": "https://scholarships.gov.in/All-Scholarships",
+      "capture_ref": "turn807427view0",
+      "evidence": "Current cycle listings, scheme names, student application windows and status for AICTE, UGC, Labour, OBC, ICAR, SC, PwD, NMMSS, ST and others."
+    },
+    {
+      "name": "UGC Ishan Uday",
+      "url": "https://www.ugc.gov.in/Scholarships/stu_Scholarship5",
+      "capture_ref": "turn153337search5",
+      "evidence": "Eligibility, income ceiling, annual award, slots and tenure."
+    },
+    {
+      "name": "UGC National Scholarship for PG Studies",
+      "url": "https://www.ugc.gov.in/Scholarships/stu_Scholarship6",
+      "capture_ref": "turn683069search0",
+      "evidence": "PG eligibility, age, annual amount, slots and tenure."
+    },
+    {
+      "name": "UGC PG University Rank Holders",
+      "url": "https://www.ugc.gov.in/Scholarships/stu_Scholarship1",
+      "capture_ref": "turn263478search0",
+      "evidence": "UG rank holder eligibility, annual assistance, slots and tenure."
+    },
+    {
+      "name": "UGC PG Indira Gandhi Single Girl Child",
+      "url": "https://www.ugc.gov.in/Scholarships/stu_Scholarship4",
+      "capture_ref": "turn263478search1",
+      "evidence": "Single girl child eligibility, age, annual assistance, slots and tenure."
+    },
+    {
+      "name": "PM-USP CSSS guideline",
+      "url": "https://www.education.gov.in/sites/upload_files/mhrd/files/upload_document/PM_USP_CSSS_guidelines_updated.pdf",
+      "capture_ref": "turn993486view4",
+      "evidence": "Percentile, course mode, institution recognition, income ceiling, award amount and renewal."
+    },
+    {
+      "name": "OBC/EBC/DNT Top Class guideline",
+      "url": "https://socialjustice.gov.in/writereaddata/UploadFile/96791726722730.pdf",
+      "capture_ref": "turn993486view5",
+      "evidence": "Category, income, full-time course, notified institution and selection conditions."
+    },
+    {
+      "name": "PwD umbrella scholarship guideline",
+      "url": "https://divyangjan.depwd.gov.in/upload/uploadfiles/files/Scholarship%20Scheme%20%20Guidelines%20%202023-24.pdf",
+      "capture_ref": "turn417382view0",
+      "evidence": "Pre-matric, post-matric and top-class course, income, slot and benefit clauses."
+    },
+    {
+      "name": "PwD 2025 amendment",
+      "url": "https://cdnbbsr.s3waas.gov.in/s3e58aea67b01fa747687f038dfde066f6/uploads/2025/09/202509111852335844.pdf",
+      "capture_ref": "turn962965view0",
+      "evidence": "04-09-2025 changes to UDID/Aadhaar, post-matric approved courses and top-class grants."
+    },
+    {
+      "name": "ICAR NTS guideline",
+      "url": "https://www.icar.gov.in/sites/default/files/Circulars/Guidelines%20for%20ICAR%20NTS%20Scholarship.pdf",
+      "capture_ref": "turn993486view6",
+      "evidence": "UG/PG AIEE, outside-domicile university, stipend rates and renewal."
+    },
+    {
+      "name": "MHA PMSS revised guideline",
+      "url": "https://www.mha.gov.in/sites/default/files/PMSSrevisedguidelines_23112020.pdf",
+      "capture_ref": "turn993486view3",
+      "evidence": "CAPF/AR and State Police dependants, monthly scholarship amounts and application route."
+    },
+    {
+      "name": "Ministry of Tribal Affairs scholarship page",
+      "url": "https://tribal.nic.in/Scholarship.aspx",
+      "capture_ref": "turn315903search1",
+      "evidence": "ST Top Class and National Fellowship scheme eligibility and benefit outline."
+    },
+    {
+      "name": "NMMSS scheme guideline",
+      "url": "https://www.education.gov.in/sites/upload_files/mhrd/files/upload_document/Scheme_NMMS_updated_12022019.pdf",
+      "capture_ref": "turn315903search29",
+      "evidence": "Scheme design, entry class, school type and annual award; old version; latest cycle changes separately tracked."
+    },
+    {
+      "name": "NMMSS 31-10-2026 PIB deadline extension",
+      "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2330936&lang=1&reg=3",
+      "capture_ref": "turn543810search7",
+      "evidence": "Official Ministry notice extends current application deadline to 15-11-2026."
+    },
+    {
+      "name": "DEPwD Pre-Matric Scholarship scheme page",
+      "url": "https://depwd.gov.in/en/scholership-schemes-pre-matric/",
+      "capture_ref": "web_capture_depwd_prematric_20261111",
+      "evidence": "Official DEPwD scheme page summary identifies Classes IX and X, Indian nationality, benchmark disability threshold, and links the scholarship application to NSP. Detailed terms remain governed by the umbrella scholarship guidelines."
+    },
+    {
+      "name": "DEPwD Post-Matric Scholarship scheme page",
+      "url": "https://depwd.gov.in/en/scholarship-post-matric/",
+      "capture_ref": "web_capture_depwd_postmatric_20261111",
+      "evidence": "Official DEPwD scheme page summary identifies Classes XI/XII, diploma, degree and postgraduate study, Indian nationality, benchmark disability threshold, and NSP application route. Detailed terms remain governed by the umbrella scholarship guidelines."
+    },
+    {
+      "name": "DEPwD Top Class Scholarship and Fellowship scheme page",
+      "url": "https://depwd.gov.in/en/scholarship-top-class-fellowship/",
+      "capture_ref": "web_capture_depwd_topclass_20261111",
+      "evidence": "Official DEPwD scheme page summary identifies graduate, postgraduate and diploma study at notified institutes, Indian nationality, benchmark disability threshold, and NSP application route. Detailed terms remain governed by the umbrella scholarship guidelines."
+    }
+  ]
+}

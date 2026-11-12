@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+.env.*
+!.env.example
+data/atlas_test_sync.db
+data/atlas_backup_before_verification_fix.db
